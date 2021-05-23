@@ -47,7 +47,9 @@ const handleOnValidMessage = (msg) => {
 				});
 			});
 
-			paginationEmbed(msg, pages, ['⏪', '⏩'], 999999999);
+			paginationEmbed(msg, pages, ['⏪', '⏩'], 999999999).catch((err) =>
+				console.log(err)
+			);
 		});
 	}
 };
