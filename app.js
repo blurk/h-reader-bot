@@ -15,8 +15,6 @@ const fetcher = (code) => nhentaiAPI.getBook(code);
 
 const paginationEmbed = require('discord.js-pagination');
 
-const keepAlive = require('./server');
-
 const handleOnValidMessage = (msg) => {
 	if (/^(hentai)\s[0-9]{6}$/.test(msg.content)) {
 		fetcher(msg.content.split(' ')[1]).then(async (book) => {
@@ -56,5 +54,4 @@ const handleOnValidMessage = (msg) => {
 
 client.on('message', handleOnValidMessage);
 
-keepAlive();
 client.login(process.env.TOKEN);
